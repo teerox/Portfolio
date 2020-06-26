@@ -1,0 +1,52 @@
+* {
+  /*outline: 1px solid red;*/
+  padding: 0;
+  margin: 0;
+  font-family: Raleway, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+p, a {
+  margin: 0;
+  text-decoration: none !important;
+}
+
+@media (max-width: 1200px) {
+  * {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 900px) {
+  * {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  * {
+    font-size: 0.65rem;
+  }
+}
