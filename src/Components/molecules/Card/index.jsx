@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import ImageContainer from "../../atoms/ImagePlaceholder";
+import {PhoneMockUp} from "../../atoms/ImagePlaceholder";
+import {LazyLoadComponent} from 'react-lazy-load-image-component';
 import Text from "../../atoms/typography";
 import Line from "../../atoms/divider";
 import {backgroundColor} from "../../constants";
-import {LazyLoadComponent} from 'react-lazy-load-image-component';
 
 
 export default function CardContainer(props) {
-
+    
     return (
         <CardContainerStyle>
             {props.children}
@@ -16,109 +16,124 @@ export default function CardContainer(props) {
     )
 }
 
+
 export function Card({details}) {
+    
     return (
         <div>
             <LazyLoadComponent>
-                <CardStyle >
+                <CardStyle>
                     <Image>
-                        <div>
-                            <a href={details.link}>
-                                <ImageContainer image={'' || details.project_snapshot} height={'30.5rem'}/>
-                            </a>
-                        </div>
+                        <PhoneMockUp device={details.device} snapshot={details.project_snapshot}/>
                     </Image>
-                    <CardContent variant={'card'}>
-                        <div>
-                            <div className='title'>
-                                <Text size={'sm'} weight={'800'}>{details.name}</Text>
+                    <div className="card-content">
+                        
+                        
+                        <CardContent variant={'card'}>
+                            <div>
+                                <div className='title'>
+                                    <Text size={'sm'} weight={'800'}>
+                                        {details.name}
+                                    </Text>
+                                    {
+                                        details.link ?
+                                            <a href={details.link} target={"_blank"} rel="noopener noreferrer">
+                                                <Text>
+                                                    <ion-icon name="download-outline"/>
+                                                </Text>
+                                            </a>
+                                            : null
+                                    }
+                                </div>
+                                <Line/>
+                                <div className='description'>
+                                    <Text size={'xsm'}>{details.description}</Text>
+                                </div>
+                            </div>
+                            <div className='tools'>
+                                <Line/>
+                                <Text size={'sm'}>
+                                    {details.tools
+                                        .replace(/,/g, '').replace(/./, '')
+                                        .replace(/and/, '')
+                                        .split(' ')
+                                        .filter(el => el !== '')
+                                        .map((el, i) =>
+                                            // { console.log(el)}
+                                            <i key={i} className={"devicon-" + el + "-plain"}/>
+                                        )}
+                                </Text>
                                 <Line/>
                             </div>
-                            <div className='description'>
-                                <Text size={'xsm'}>{details.description}</Text>
-                            </div>
-                        </div>
-                        <div className='tools'>
-                            <Line/>
-                            <Text size={'sm'}>
-                                {details.tools
-                                    .replace(/,/g, '').replace(/./, '')
-                                    .replace(/and/, '')
-                                    .split(' ')
-                                    .filter(el => el !== '')
-                                    .map(el =>
-                                      // { console.log(el)}
-                                        <i  className={"devicon-" + el + "-plain"}/>
-                                    
-                                    )}
-                            </Text>
-                            <Line/>
-                        </div>
-                    </CardContent>
+                        </CardContent>
+                    </div>
                 </CardStyle>
             </LazyLoadComponent>
         </div>
-
     )
 }
 
 const CardContainerStyle = styled.div`
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    grid-gap: 40px;
 `;
 
 const CardStyle = styled.div`
-    width: 20.7rem;
-    min-width: 15.625rem;
-    height:auto;
-    margin: 1.1rem;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 17px;
-   
+    min-height: 540px;
+    overflow: hidden;
+    
+    .card-content {
+        width: 100%;
+        transition: 0.5s;
+        position: absolute;
+        bottom: -153px;
+        z-index: 3;
+
+    }
+    
+    
+    &:hover {
+        box-shadow: 0px 0px 33px 5px black;
+        .card-content {
+            bottom: 0px;
+        }
+    }
+    
 `;
 
 const Image = styled.div`
-    background-color: grey;
-    height:auto;
+    position: relative;
     overflow: hidden;
-    border-top-left-radius: 17px;
-    border-top-right-radius: 17px;
-    box-shadow: 0px -11px 48px -11px black;
     z-index: 2;
-    
-    &:hover{
-        box-shadow: 0px 0px 33px 5px black;
-        transform: scale(1.1);
-    };
-};
-
-
-    div {
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 `;
 
 
 const CardContent = styled.div`
+    width: 100%;
     height: 12.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 0.6rem; 
-    background: linear-gradient(180deg, ${backgroundColor}, transparent);
-    box-shadow: 0px -117px 27px -11px #00000075
+    background: linear-gradient(180deg, ${backgroundColor});
+    // box-shadow: 0px -117px 27px -11px #00000075;
+    
 
     
-    .title {
-        letter-spacing: 0px;
-        line-height: 30px; 
-    };
+    div {
+        .title {
+            letter-spacing: 0px;
+            line-height: 30px;
+            display: flex;
+            justify-content: space-between;
+        };
+    }
     
     .description {
         width: 100%; 

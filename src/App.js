@@ -1,4 +1,4 @@
-import React, {Suspense, lazy} from 'react';
+import React, {lazy, Suspense} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Body, Footer} from './Compositions/templates/index';
 import NavBar from "./Components/organism/navbar";
@@ -13,7 +13,7 @@ const About = lazy(() => import('./Compositions/pages/about'));
 const Works = lazy(() => import('./Compositions/pages/jobs'));
 const Contacts = lazy(() => import('./Compositions/pages/contact'));
 const Home = React.lazy(() => import('./Compositions/pages/home'));
-const BriefMe = React.lazy(() => import('./Compositions/pages/briefme'));
+// const BriefMe = React.lazy(() => import('./Compositions/pages/briefme'));
 const PostJob = React.lazy(() => import('./Compositions/pages/admin/post_jobs'));
 
 
@@ -23,43 +23,43 @@ const history = createBrowserHistory();
 
 // Initialize google analytics page view tracking
 history.listen(location => {
-    ReactGA.set({ page: location.pathname }); // Update the user's current page
+    ReactGA.set({page: location.pathname}); // Update the user's current page
     ReactGA.pageview(location.pathname); // Record a pageview for the given page
 });
 
 
 function App() {
-
+    
     return (
         <>
             <StyleProvider>
-                    <Body variant={'default'}>
-                        <BrowserRouter>
-                            <Suspense fallback={
-                                <div className="d-flex justify-content-center align-items-center">
-                                    <div className="spinner-border" role="status">
-                                        <span className="sr-only">Loading...</span>
-                                    </div>
+                <Body variant={'default'}>
+                    <BrowserRouter>
+                        <Suspense fallback={
+                            <div className="d-flex justify-content-center align-items-center">
+                                <div className="spinner-border" role="status">
+                                    <span className="sr-only">Loading...</span>
                                 </div>
-                            }>
-                                <NavBar/>
-                                <Switch>
-                                    <Route path="/all" component={All}/>
-                                    {/* <Route path={'/briefMe'} component={BriefMe}/> */}
-                                    <Route path="/about" component={About}/>
-                                    <Route path="/projects" component={Works}/>
-                                    <Route path="/contacts" component={Contacts}/>
-                                    <Route path="/post_job" component={PostJob}/>
-                                    <Route path="/home"
-                                           component={Home}/>
-                                    <Route path="/" component={Home}/>
-                                </Switch>
-                            </Suspense>
-                        </BrowserRouter>
-                    </Body>
-                    <Footer>
-                        <FooterDiv/>
-                    </Footer>
+                            </div>
+                        }>
+                            <NavBar/>
+                            <Switch>
+                                <Route path="/all" component={All}/>
+                                {/* <Route path={'/briefMe'} component={BriefMe}/> */}
+                                <Route path="/about" component={About}/>
+                                <Route path="/projects" component={Works}/>
+                                <Route path="/contacts" component={Contacts}/>
+                                <Route path="/post_job" component={PostJob}/>
+                                <Route path="/home"
+                                       component={Home}/>
+                                <Route path="/" component={Home}/>
+                            </Switch>
+                        </Suspense>
+                    </BrowserRouter>
+                </Body>
+                <Footer>
+                    <FooterDiv/>
+                </Footer>
             </StyleProvider>
         </>
     );

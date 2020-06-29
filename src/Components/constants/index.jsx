@@ -4,7 +4,7 @@ import {Color, TextSize} from './constants';
 export const backgroundColor = theme.variants('mode', 'variant', {
     default: {light: Color.WHITE, dark: Color.NAVY},
     primary: {light: Color.WHITE, dark: Color.NAVY},
-    card: {light: Color.CARDGREY, dark: Color.CARDNAVY},
+    card: {light: Color.CARD_GRAD_WHT, dark: Color.CARD_GRAD_BLK},
 });
 
 export const footerBackgroundColor = theme.variants('mode', 'variant', {

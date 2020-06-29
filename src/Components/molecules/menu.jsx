@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {hover, textColor} from "../constants";
 import Text from "../atoms/typography";
 import PropTypes from "prop-types";
-import Button from "../atoms/button";
 
 
 export default function Menu(props) {

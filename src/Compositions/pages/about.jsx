@@ -34,7 +34,7 @@ export default function About() {
                     </Text>
      
                     <Text>
-                        Over the years, he has interned in several organisations where he has applied he's knowledge to
+                        Over the years, he has interned in several organisations where he has applied his knowledge to
                         improve and/or optimize manual processes.
                     </Text>
                 </InnerLeft>
