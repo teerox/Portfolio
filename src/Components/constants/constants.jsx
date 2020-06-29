@@ -15,6 +15,8 @@ export const Color = {
     DEFAULT: "#000",
     CARDGREY: "#4d49490f",
     CARDNAVY: "#1c2026b5",
+    CARD_GRAD_BLK: "#1c2026e8, #000000f7",
+    CARD_GRAD_WHT: "#ffffff, #64575799"
 };
 
 

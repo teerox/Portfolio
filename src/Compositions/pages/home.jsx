@@ -2,11 +2,10 @@ import React from "react";
 import Text from '../../Components/atoms/typography';
 import Button from '../../Components/atoms/button';
 import ImageContainer from "../../Components/atoms/ImagePlaceholder";
-import Header from "../../Components/molecules/header";
 import {Content, Inner} from "../templates";
 import Socials from "../../Components/molecules/socials";
 import {RecentJobs} from "./jobs";
-import Pic from "../../Components/atoms/ImagePlaceholder/image.jpg"
+import Pic from "../../Components/atoms/ImagePlaceholder/tee.jpeg"
 import StyleContext from "../../Contexts/styleContext/styleContext";
 
 
