@@ -18,6 +18,16 @@ export default function Jobs() {
     const allData = [
         {
             "id": 1,
+            "name": "Cp Compass(Android/iOS)",
+            "description": "An Investment Banking Application for creating Investment and making Savings ",
+            "tools": "Kotlin swift ",
+            "link": "",
+            "project_snapshot": seventh,
+            "repository": "https://github.com/teerox/",
+            "device": "ios"
+        },
+        {
+            "id": 2,
             "name": "The Movie(Android/iOS)",
             "description": "Built a movie application for Android and iOS where a user can watch movie trailer of most recent movies.",
             "tools": " java swift github",
@@ -28,7 +38,7 @@ export default function Jobs() {
         },
         
         {
-            "id": 2,
+            "id": 3,
             "name": "My RootAfrica(Android/iOS)",
             "description": "Collaborated with team members to build a full-stack mobile Investment application based on client requirements. used for connecting interested Individual willing to invest in Africa. yet to be launched and Deployed on App Store.",
             "tools": " java swift github",
@@ -39,7 +49,7 @@ export default function Jobs() {
         },
         
         {
-            "id": 3,
+            "id": 4,
             "name": "Distance Calculator(Android)",
             "description": "An application capable of calculating distance covered by a user and able to get the location of a user using Latitude and Longitude on the google map.",
             "tools": " java github",
@@ -49,7 +59,7 @@ export default function Jobs() {
             "device": "android"
         },
         {
-            "id": 4,
+            "id": 5,
             "name": "Weather App(iOS)",
             "description": " An iOS weather application.",
             "tools": " swift github",
@@ -60,7 +70,7 @@ export default function Jobs() {
     
         },
         {
-            "id": 5,
+            "id": 6,
             "name": "Todo App(Android/iOS)",
             "description": "A Simple Todo Application.",
             "tools": " java swift github",
@@ -70,7 +80,7 @@ export default function Jobs() {
             "device": "android"
         },
         {
-            "id": 6,
+            "id": 7,
             "name": "BMI Calculator App(iOS)",
             "description": "A Simple BMI calculator for personal use for Knowledge purpose.",
             "tools": " swift github",
@@ -79,16 +89,7 @@ export default function Jobs() {
             "repository": "https://github.com/teerox/",
             "device": "ios"
         },
-        {
-            "id": 7,
-            "name": "Cp Compass(Android/iOS)",
-            "description": "An Investment Banking Application for creating Investment and making Savings ",
-            "tools": "Kotlin swift ",
-            "link": "",
-            "project_snapshot": seventh,
-            "repository": "https://github.com/teerox/",
-            "device": "ios"
-        },
+   
         {
             "id": 8,
             "name": "Tradfi (Android)",
