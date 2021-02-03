@@ -9,7 +9,8 @@ import third from "../../Components/atoms/ImagePlaceholder/distance.jpeg"
 import fourth from "../../Components/atoms/ImagePlaceholder/weather.png"
 import fifth from "../../Components/atoms/ImagePlaceholder/task.jpeg"
 import sixth from "../../Components/atoms/ImagePlaceholder/bmicalculator.png"
-
+import seventh from "../../Components/atoms/ImagePlaceholder/cpcompass.jpeg"
+import eighth from "../../Components/atoms/ImagePlaceholder/tradefi.jpeg"
 
 export default function Jobs() {
     
@@ -77,6 +78,26 @@ export default function Jobs() {
             "project_snapshot": sixth,
             "repository": "https://github.com/teerox/",
             "device": "ios"
+        },
+        {
+            "id": 7,
+            "name": "Cp Compass(Android/iOS)",
+            "description": "An Investment Banking Application for creating Investment and making Savings ",
+            "tools": "Kotlin swift ",
+            "link": "",
+            "project_snapshot": seventh,
+            "repository": "https://github.com/teerox/",
+            "device": "ios"
+        },
+        {
+            "id": 8,
+            "name": "Tradfi (Android)",
+            "description": "An Investment Banking Application for booking investments, Bonds and Treasury Bills.",
+            "tools": " Kotlin  Java ",
+            "link": "",
+            "project_snapshot": eighth,
+            "repository": "https://github.com/teerox/",
+            "device": "android"
         }
     ];
     
